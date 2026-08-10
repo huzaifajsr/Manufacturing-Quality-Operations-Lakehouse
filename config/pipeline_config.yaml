@@ -1,0 +1,24 @@
+project_name: "Manufacturing Quality and Operations Lakehouse"
+
+storage:
+  raw_layer_path: "/opt/airflow/data"
+  bronze_layer_path: "/opt/airflow/data/bronze"
+  silver_layer_path: "/opt/airflow/data/silver"
+
+snowflake:
+  account: "your_snowflake_account"
+  user: "your_username"
+  password: "your_password"
+  warehouse: "COMPUTE_WH"
+  database: "MFG_LAKEHOUSE"
+  schema: "STAGING"
+  role: "SYSADMIN"
+
+pipeline_settings:
+  schedule_interval: "@daily"
+  max_late_event_hours: 24
+  
+data_quality:
+  duplicate_tolerance: 0
+  null_threshold_pct: 0.05
+  row_count_variance_pct: 0.20

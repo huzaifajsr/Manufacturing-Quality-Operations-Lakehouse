@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spark / Data
+spark-warehouse/
+metastore_db/
+derby.log
+data/*.csv
+data/*.parquet
+output/
+tmp/
+bronze/
+silver/
+
+# Airflow
+logs/
+airflow-webserver.pid
+airflow-webserver-monitor.pid
+airflow-webserver.err
+airflow-webserver.out
+airflow-webserver.log
+airflow-scheduler.pid
+airflow-scheduler.err
+airflow-scheduler.out
+airflow-scheduler.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS Files
+.DS_Store
+Thumbs.db
