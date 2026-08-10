@@ -15,34 +15,34 @@ GitHub: [https://github.com/huzaifajsr/Manufacturing-Quality-Operations-Lakehous
 
 ```mermaid
 graph LR
-    subgraph Data Sources
+    subgraph Sources["Data Sources"]
         S1(Machine Logs)
         S2(Production Records)
         S3(Inspection Results)
     end
-    
-    subgraph Data Lakehouse (Delta/PySpark)
-        Bronze[(Bronze Layer\nRaw Data)]
-        Silver[(Silver Layer\nTrusted Data)]
+
+    subgraph Lakehouse["Data Lakehouse - Delta / PySpark"]
+        Bronze[(Bronze Layer)]
+        Silver[(Silver Layer)]
     end
-    
-    subgraph Data Warehouse (Snowflake)
+
+    subgraph Warehouse["Data Warehouse - Snowflake"]
         SF_Staging[(Staging)]
-        SF_Analytics[(Analytics / KPI Views)]
+        SF_Analytics[(Analytics / KPIs)]
     end
-    
-    subgraph Orchestration
-        Airflow((Apache Airflow))
+
+    subgraph Orch["Orchestration"]
+        Airflow((Airflow))
     end
-    
+
     S1 --> Bronze
     S2 --> Bronze
     S3 --> Bronze
-    
+
     Bronze --> Silver
     Silver --> SF_Staging
     SF_Staging --> SF_Analytics
-    
+
     Airflow -.- Bronze
     Airflow -.- Silver
     Airflow -.- SF_Staging
